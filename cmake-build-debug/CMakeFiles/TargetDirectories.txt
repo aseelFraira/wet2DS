@@ -1,0 +1,3 @@
+C:/Users/aseel/CLionProjects/wet2DS/cmake-build-debug/CMakeFiles/wet2DS.dir
+C:/Users/aseel/CLionProjects/wet2DS/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/aseel/CLionProjects/wet2DS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
