@@ -15,9 +15,9 @@
 #ifndef PIRATESA2_H_
 #define PIRATESA2_H_
 
-#include "wet2util.h"
 #include "Pirate.h"
 #include "UnionFind.h"
+#include "wet2util.h"
 
 
 
@@ -26,6 +26,7 @@ private:
 
     UnionFind m_fleets;
     HashTable<std::shared_ptr<Pirate>> m_pirates;
+    HashTable<std::shared_ptr<Fleet>> m_AllFleets;
 	//
 	// Here you may add anything you want
 	//

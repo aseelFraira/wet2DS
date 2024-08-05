@@ -14,7 +14,7 @@ private:
     int m_savings;
 
 public:
-    UFnode* motherFleet; //TODO UNIONFIND NODEEEEEEEE
+    UFnode* motherFleet;
     Pirate(): m_argument(0),m_pirateID(0), m_savings(0), motherFleet(nullptr) {}
     Pirate(int pirateID) : m_pirateID(pirateID), m_argument(0), m_savings(0),motherFleet(
             nullptr){}

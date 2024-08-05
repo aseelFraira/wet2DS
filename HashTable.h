@@ -34,6 +34,8 @@ public:
     void enlargeArray();
     int hash(int index);
     NodeList<T>* find(int id);
+
+    void remove(int id);
 };
 
 template<typename T>
@@ -121,6 +123,9 @@ int HashTable<T>::hash(int index) {
 template<typename T>
 NodeList<T>* HashTable<T>::find(int id) {
     List<T>* list = m_dynamicArray->find(hash(id));
+    if(!list){
+        return nullptr;
+    }
     NodeList<T>* curr = list->m_head;
     while(curr){
         if(curr->m_key == id){
@@ -130,5 +135,39 @@ NodeList<T>* HashTable<T>::find(int id) {
     }
     return nullptr; // Not found
 }
+
+template<typename T>
+void HashTable<T>::remove(int id) {
+    int index = hash(id);
+    List<T> *list = m_dynamicArray->find(index);
+
+    if (list == nullptr) {
+        return; // The list doesn't exist, nothing to remove
+    }
+
+    NodeList<T> *current = list->m_head;
+    NodeList<T> *previous = nullptr;
+
+    while (current != nullptr) {
+        if (current->m_key == id) {
+            if (previous == nullptr) {
+                list->m_head = current->m_next;
+            } else {
+                previous->m_next = current->m_next;
+            }
+
+            if (current == list->m_tail) {
+                list->m_tail = previous;
+            }
+
+            delete current;
+            m_tableSize--;
+            return;
+        }
+        previous = current;
+        current = current->m_next;
+    }
+}
+
 
 #endif // WET2DS_HASHTABLE_H

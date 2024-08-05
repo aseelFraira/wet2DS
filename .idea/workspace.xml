@@ -21,21 +21,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85f91ded-a19f-4948-b682-7261c6dc8788" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-10306a8483233fa991ec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/Fleet.cpp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/Pirate.cpp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/UnionFind.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HashTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pirate.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pirate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pirate.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UFnode.h" beforeDir="false" afterPath="$PROJECT_DIR$/UFnode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnionFind.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UnionFind.h" beforeDir="false" afterPath="$PROJECT_DIR$/UnionFind.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-fc8223c31fd93196d07a.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-7cd45f164ce5886c052e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-b4a28574d289498d3925.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-db31f0e071b8fa059d61.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-48a1589e1dad99b37311.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-08-05T08-39-58-0902.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-08-05T11-05-09-0810.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-wet2DS-Debug-f3828a18e8c3faffcc2a.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-wet2DS-Debug-da01c100c88bffe89805.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-7cd45f164ce5886c052e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-10306a8483233fa991ec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-48a1589e1dad99b37311.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-08-05T11-05-09-0810.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-wet2DS-Debug-da01c100c88bffe89805.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
@@ -47,18 +45,16 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/Fleet.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/Fleet.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/Pirate.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/wet2DS.dir/UnionFind.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pirates24b2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pirates24b2.cpp" afterDir="false" />
-    </list>
-    <list id="38f0cf12-6719-4371-9eef-ee900e6dc04b" name="Changes by Lana" comment="">
-      <change beforePath="$PROJECT_DIR$/Fleet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Fleet.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pirate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pirate.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnionFind.h" beforeDir="false" afterPath="$PROJECT_DIR$/UnionFind.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pirates24b2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pirates24b2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pirates24b2.h" beforeDir="false" afterPath="$PROJECT_DIR$/pirates24b2.h" afterDir="false" />
     </list>
+    <list id="38f0cf12-6719-4371-9eef-ee900e6dc04b" name="Changes by Lana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,39 +66,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/UnionFind.h">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="3" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="4" end1="11" start2="4" end2="5" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="12" end1="17" start2="6" end2="6" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="20" end1="22" start2="9" end2="11" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="23" end1="24" start2="12" end2="13" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="26" end1="29" start2="15" end2="18" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="31" end1="34" start2="20" end2="20" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="35" end1="39" start2="21" end2="24" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="41" end1="46" start2="26" end2="41" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="48" end1="55" start2="43" end2="63" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="58" end1="64" start2="66" end2="68" changelist="38f0cf12-6719-4371-9eef-ee900e6dc04b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/pirates24b2.cpp">
-      <ranges>
-        <range start1="15" end1="16" start2="15" end2="15" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="19" end1="20" start2="18" end2="19" changelist="38f0cf12-6719-4371-9eef-ee900e6dc04b" />
-        <range start1="33" end1="34" start2="32" end2="33" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="35" end1="36" start2="34" end2="35" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="39" end1="42" start2="38" end2="40" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="52" end1="53" start2="50" end2="51" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="65" end1="66" start2="63" end2="64" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="78" end1="79" start2="76" end2="77" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="90" end1="92" start2="88" end2="90" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="95" end1="96" start2="93" end2="94" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="104" end1="106" start2="102" end2="104" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-        <range start1="110" end1="111" start2="108" end2="109" changelist="85f91ded-a19f-4948-b682-7261c6dc8788" />
-      </ranges>
-    </file>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="85mp4yoa" />
@@ -169,6 +132,7 @@
       <workItem from="1722785511632" duration="473000" />
       <workItem from="1722846510738" duration="520000" />
       <workItem from="1722872111514" duration="2498000" />
+      <workItem from="1722889076862" duration="185000" />
     </task>
     <servers />
   </component>

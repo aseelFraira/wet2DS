@@ -1,6 +1,11 @@
 # ninja log v5
-0	84	7444885588248802	CMakeFiles/wet2DS.dir/UnionFind.cpp.obj	ed333a26612786f0
-15	90	7444885588321942	CMakeFiles/wet2DS.dir/Pirate.cpp.obj	8d825769c716885e
-11	118	7445729164244584	CMakeFiles/wet2DS.dir/Pirate.cpp.obj	8d825769c716885e
-17	127	7445729164396105	CMakeFiles/wet2DS.dir/Fleet.cpp.obj	d756b936a7b8eef5
-1	135	7445729164496470	CMakeFiles/wet2DS.dir/UnionFind.cpp.obj	ed333a26612786f0
+43	184	7445911340585181	CMakeFiles/wet2DS.dir/Fleet.cpp.obj	1eb5bdc0f90ef065
+0	204	7445924629916614	build.ninja	ac10618658e35239
+7	2111	7445923427747472	CMakeFiles/wet2DS.dir/pirates24b2.cpp.obj	ab408c312b857b17
+6	66	7445919021058776	CMakeFiles/wet2DS.dir/HashTable.cpp.obj	fe245a3958f80fa7
+24	1976	7445923426339822	CMakeFiles/wet2DS.dir/main24b2.cpp.obj	f571f3293ec4a2dd
+3	491	7445925195689316	CMakeFiles/wet2DS.dir/pirates24b2.cpp.obj	ab408c312b857b17
+11	517	7445925195931224	CMakeFiles/wet2DS.dir/main24b2.cpp.obj	f571f3293ec4a2dd
+478	9534	7445926319676678	CMakeFiles/wet2DS.dir/main24b2.cpp.obj	f571f3293ec4a2dd
+175	9644	7445926320791103	CMakeFiles/wet2DS.dir/pirates24b2.cpp.obj	ab408c312b857b17
+9644	9799	7445926322296414	wet2DS.exe	1a87ec61909724f0
