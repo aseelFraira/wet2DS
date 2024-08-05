@@ -2,31 +2,31 @@
 #define WET2DS_UNIONFIND_H
 
 #include "HashTable.h"
-
-class Node {
+template<typename T>
+class UFnode{
 public:
     int m_key;
-    std::shared_ptr<Fleet> m_fleet;
-    Node* m_parent;
+    T m_data;
+    UFnode* m_parent;
+    int m_extra;
 
-    //Node() : m_key(nullptr), m_data(nullptr), m_parent(nullptr) {}
-    Node(int key, std::shared_ptr<Fleet> data) : m_key(key), m_fleet(data), m_parent(nullptr) {}
-    ~Node() = default;
+    UFnode(int key, T data, int extra) : m_key(key), m_data(data),
+                                         m_parent(nullptr),m_extra(extra) {}
+    ~UFnode() = default;
 };
-
 template<typename T>
 class UnionFind {
 public:
 
-    HashTable<List<Node>>* m_table;
+    HashTable<List<NodeList<UFnode<T>>>>* m_table;
     void compressPaths(Node* node);
 
     UnionFind(HashTable<T>* table = nullptr);
     ~UnionFind() { delete m_table; }
 
     void makeSet(int fleetID,std::shared_ptr<Fleet> fleet);
-    Node* find(Node<T>* node);
-    void unionSets(Node<T>* node1, Node<T>* node2);
+    UFnode<T>* find(int id);
+    void unionSets(int id1, int id2);
 };
 
 template<typename T>
@@ -34,17 +34,16 @@ UnionFind<T>::UnionFind(HashTable<T>* table)
         : m_table(table) {}
 
 template<typename T>
-void UnionFind<T>::makeSet(int fleetID) {
-    Node<T>* newNode = new Node<T>(fleetID, nullptr);
-    m_table->insert(std::make_shared<Node<T>>(newNode));
+void UnionFind<T>::makeSet(int id,T data) {
+    UFnode<T>* newNode = new UFnode<T>(id,data,0);
+    m_table->insert(id);
 }
 
 template<typename T>
-Node<T>* UnionFind<T>::find(Node<T>* node) {
-    if (node->m_parent != node) {
-        node->m_parent = find(node->m_parent);
-    }
-    return node->m_parent;
+UFnode<T>* UnionFind<T>::find(int id) {
+    T data = m_table->find(id);
+    while (no)
+        return node->m_parent;
 }
 
 template<typename T>

@@ -4,32 +4,37 @@
 
 #ifndef WET2DS_LIST_H
 #define WET2DS_LIST_H
+
+#include <memory>
+#include "Node.h"
 template<typename T>
 class NodeList{
+public:
+    int m_key;
     T m_data;
     NodeList* m_prev;
     NodeList* m_next;
 
     NodeList():m_data(nullptr),m_next(nullptr),m_prev(nullptr){}
-    NodeList(T data):m_data(data),m_next(nullptr),m_prev(nullptr){}
+    NodeList(int key,T data):m_key(key),m_data(data),m_next(nullptr),m_prev(nullptr){}
     ~NodeList() = default;
 
 };
 template<typename T>
 class List{
 public:
-    int m_size;
+    int m_listSize;
     NodeList<T>* m_head;
     NodeList<T>* m_tail;
 
-    List():m_head(nullptr),m_tail(nullptr),m_size(0){}
+    List():m_head(nullptr),m_tail(nullptr),m_listSize(0){}
     ~List();
-    void insertFront(T data);
+    void insertFront(int key,T data);
 
 };
 template<typename T>
 List<T>::~List() {
-    if (m_size == 0)
+    if (m_listSize == 0)
     {
         return;
     }
@@ -41,18 +46,19 @@ List<T>::~List() {
         m_head = prev;
     }
 }
-List<T>::addFront(T data){
-    ListNode<T>* NodeToAdd = new ListNode<T>(data);
-    listSize++;
-    if(tail == nullptr && head == nullptr)
+template<typename T>
+void List<T>::insertFront(int key,T data){
+    NodeList<T>* NodeToAdd = new NodeList<T>(key,data);
+    m_listSize++;
+    if(m_tail == nullptr && m_head == nullptr)
     {
-        head=NodeToAdd;
-        tail=NodeToAdd;
+        m_head = NodeToAdd;
+        m_tail = NodeToAdd;
         return;
     }
-    head->next=ListNodeToAdd;
-    ListNodeToAdd->prev=head;
-    head=ListNodeToAdd;
+    m_head->m_next = NodeToAdd;
+    NodeToAdd->m_prev = m_head;
+    m_head=NodeToAdd;
 }
 
 
