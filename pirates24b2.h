@@ -16,9 +16,15 @@
 #define PIRATESA2_H_
 
 #include "wet2util.h"
+#include "Fleet.h"
+#include "Pirates.h"
+#include "UnionFind.h"
+#include "HashTable.h"
 
 class oceans_t {
 private:
+    UnionFind<std::shared_ptr<Fleet>> m_fleets;
+    HashTable<std::shared_ptr<Pirate>> m_pirates;
 	//
 	// Here you may add anything you want
 	//
