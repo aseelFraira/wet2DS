@@ -17,6 +17,7 @@ class NodeList{
 };
 template<typename T>
 class List{
+public:
     int m_size;
     NodeList<T>* m_head;
     NodeList<T>* m_tail;

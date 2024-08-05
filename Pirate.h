@@ -2,9 +2,9 @@
 // Created by Lana on 24/07/2024.
 //
 
-#ifndef WET2DS_PIRATES_H
-#define WET2DS_PIRATES_H
-class Pirate {
+#ifndef WET2DS_PIRATE_H
+#define WET2DS_PIRATE_H
+class Pirate{
 private:
 
     int m_pirateID;
@@ -35,4 +35,4 @@ public:
     }
 
 };
-#endif //WET2DS_PIRATES_H
+#endif //WET2DS_PIRATE_H

@@ -14,14 +14,30 @@ oceans_t::~oceans_t()
 StatusType oceans_t::add_fleet(int fleetId)
 {
 	// TODO: Your code goes here
-    m_fleets.makeSIT
+    if(fleetId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+    if (m_fleets.m_table.find(fleetId)){
+
+    }
+    std::shared_ptr<Fleet> fleet = std::make_shared<Fleet>(fleetId);
+    m_fleets.makeSet(fleet);
 	return StatusType::SUCCESS;
 }
 
 StatusType oceans_t::add_pirate(int pirateId, int fleetId)
 {
-	// TODO: Your code goes here
-	return StatusType::SUCCESS;
+    if(pirateId <= 0 || fleetId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+
+    Node<int,std::shared_ptr<Fleet>>* fleet =  m_fleets.find(fleetId);
+
+    if(!fleet || m){
+        return StatusType::FAILURE;
+    }
+
+    return StatusType::SUCCESS;
 }
 
 StatusType oceans_t::pay_pirate(int pirateId, int salary)

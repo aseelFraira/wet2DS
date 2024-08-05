@@ -17,9 +17,8 @@
 
 #include "wet2util.h"
 #include "Fleet.h"
-#include "Pirates.h"
-#include "UnionFind.h"
-#include "HashTable.h"
+#include "Pirate.h"
+
 
 class oceans_t {
 private:
