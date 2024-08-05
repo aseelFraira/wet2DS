@@ -1,66 +1,70 @@
 #ifndef WET2DS_UNIONFIND_H
 #define WET2DS_UNIONFIND_H
-
+#include "Fleet.h"
 #include "HashTable.h"
-template<typename T>
-class UFnode{
-public:
-    int m_key;
-    T m_data;
-    UFnode* m_parent;
-    int m_extra;
+#include "UFnode.h"
 
-    UFnode(int key, T data, int extra) : m_key(key), m_data(data),
-                                         m_parent(nullptr),m_extra(extra) {}
-    ~UFnode() = default;
-};
-template<typename T>
 class UnionFind {
 public:
 
-    HashTable<List<NodeList<UFnode<T>>>>* m_table;
-    void compressPaths(Node* node);
+    HashTable<std::shared_ptr<Fleet>>* m_table;
+  //  void compressPaths(Node* node);
 
-    UnionFind(HashTable<T>* table = nullptr);
+    UnionFind(HashTable<std::shared_ptr<Fleet>>* table = nullptr);
     ~UnionFind() { delete m_table; }
 
-    void makeSet(int fleetID,std::shared_ptr<Fleet> fleet);
-    UFnode<T>* find(int id);
-    void unionSets(int id1, int id2);
+    void makeSet(std::shared_ptr<Fleet> fleet);
+    UFnode* find(int id);
+    void unite(int id1, int id2);
 };
 
-template<typename T>
-UnionFind<T>::UnionFind(HashTable<T>* table)
-        : m_table(table) {}
 
-template<typename T>
-void UnionFind<T>::makeSet(int id,T data) {
-    UFnode<T>* newNode = new UFnode<T>(id,data,0);
-    m_table->insert(id);
+void UnionFind::makeSet(std::shared_ptr<Fleet> fleet) {
+    UFnode* newNode = new UFnode(fleet->getID(),fleet);
+    m_table->insert(fleet,fleet->getID(),newNode);
 }
 
-template<typename T>
-UFnode<T>* UnionFind<T>::find(int id) {
-    T data = m_table->find(id);
-    while (no)
-        return node->m_parent;
+UFnode* UnionFind::find(int id) {
+    UFnode* curr = m_table->find(id)->ptr;
+    UFnode* root = curr->findDad();
+    int extra = curr->getExtraPath();
+
+    while(curr->m_parent){
+        int tempExtra = extra;
+        extra -= curr->m_extra;
+        if(curr->m_parent->m_key != root->m_key){
+            curr->m_parent = root;
+            curr->m_extra = tempExtra;
+        }
+        curr = curr->m_parent;
+    }
+    return curr;
 }
 
-template<typename T>
-void UnionFind<T>::unionSets(Node<T>* node1, Node<T>* node2) {
-    Node<T>* root1 = find(node1);
-    Node<T>* root2 = find(node2);
+void UnionFind::unite(int id1,int id2) {
+    UFnode* root1 = find(id1);
+    UFnode* root2 = find(id2);
+    if (root1 != root2){
+        if(root1->m_fleet->getShipsNum() > root2->m_fleet->getShipsNum()){
+            root2->m_parent = root1;
+            if(root1->m_fleet->getPiratesNum() < root2->m_fleet->getPiratesNum()){
 
-    if (root1 != root2) {
-        root2->m_parent = root1;
+            }
+            root2->m_extra = root1->m_fleet->getShipsNum();
+            root1->m_fleet->setShipsNum(root2->m_fleet->getShipsNum());
+        } else if(root1->m_fleet->getShipsNum() < root2->m_fleet->getShipsNum()){
+            root1->m_parent = root2;
+            root1->m_extra = root2->m_fleet->getShipsNum();
+            root2->m_fleet->setShipsNum(root1->m_fleet->getShipsNum());
+        }else{
+            root2->m_parent = root1;
+            root2->m_extra = root1->m_fleet->getShipsNum();
+            root1->m_fleet->setShipsNum(root2->m_fleet->getShipsNum());
+        }
     }
 }
 
-template<typename T>
-void UnionFind<T>::compressPaths(Node<T>* node) {
-    if (node->m_parent != node) {
-        node->m_parent = find(node->m_parent);
-    }
-}
+
+
 
 #endif //WET2DS_UNIONFIND_H

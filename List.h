@@ -6,16 +6,19 @@
 #define WET2DS_LIST_H
 
 #include <memory>
-#include "Node.h"
+#include "UFnode.h"
+
 template<typename T>
+
 class NodeList{
 public:
     int m_key;
     T m_data;
     NodeList* m_prev;
     NodeList* m_next;
+    UFnode* ptr;
 
-    NodeList():m_data(nullptr),m_next(nullptr),m_prev(nullptr){}
+    NodeList():m_data(nullptr),m_next(nullptr),m_prev(nullptr), ptr(nullptr){}
     NodeList(int key,T data):m_key(key),m_data(data),m_next(nullptr),m_prev(nullptr){}
     ~NodeList() = default;
 
@@ -29,7 +32,7 @@ public:
 
     List():m_head(nullptr),m_tail(nullptr),m_listSize(0){}
     ~List();
-    void insertFront(int key,T data);
+    void insertFront(T data,int key, UFnode* ptr = nullptr);
 
 };
 template<typename T>
@@ -47,8 +50,9 @@ List<T>::~List() {
     }
 }
 template<typename T>
-void List<T>::insertFront(int key,T data){
+void List<T>::insertFront(T data,int key, UFnode* ptr){
     NodeList<T>* NodeToAdd = new NodeList<T>(key,data);
+    NodeToAdd->ptr = ptr;
     m_listSize++;
     if(m_tail == nullptr && m_head == nullptr)
     {

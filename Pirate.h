@@ -2,6 +2,7 @@
 // Created by Lana on 24/07/2024.
 //
 #include "Fleet.h"
+#include "UFnode.h"
 #include <memory>
 #ifndef WET2DS_PIRATE_H
 #define WET2DS_PIRATE_H
@@ -13,15 +14,16 @@ private:
     int m_savings;
 
 public:
-    std::shared_ptr<Fleet> motherFleet; //TODO UNIONFIND NODEEEEEEEE
-    Pirate(): m_argument(0),m_pirateID(0), m_savings(0) {}
-    Pirate(int pirateID) : m_pirateID(pirateID), m_argument(0), m_savings(0){}
+    UFnode* motherFleet; //TODO UNIONFIND NODEEEEEEEE
+    Pirate(): m_argument(0),m_pirateID(0), m_savings(0), motherFleet(nullptr) {}
+    Pirate(int pirateID) : m_pirateID(pirateID), m_argument(0), m_savings(0),motherFleet(
+            nullptr){}
 
     int getPirateID(){
         return m_pirateID;
     }
     int getArgument(){
-        return m_argument;
+        return m_argument + motherFleet->getExtraPath();
     }
     void setArgument(int change){
         m_argument = change;

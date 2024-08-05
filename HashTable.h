@@ -3,7 +3,7 @@
 
 #include <memory> // For std::shared_ptr
 #include "List.h" // Assuming List.h is available
-#include "Node.h"
+
 
 template<typename T>
 class dynamicArray {
@@ -17,7 +17,7 @@ public:
 public:
     explicit dynamicArray(int size);
     ~dynamicArray();
-    void add(std::shared_ptr<Fleet> toAdd, int index);
+    void add(T toAdd, int index, int id, UFnode* ptr = nullptr);
     List<T>* find(int index) const;
 };
 
@@ -30,16 +30,16 @@ class HashTable {
 public:
     explicit HashTable(int arraySize = 10);
     ~HashTable();
-    void insert(T data, int id);
+    void insert(T data,int id, UFnode* ptr = nullptr);
     void enlargeArray();
     int hash(int index);
-    T find(int index);
+    NodeList<T>* find(int id);
 };
 
 template<typename T>
 dynamicArray<T>::dynamicArray(int size)
         : m_size(size), totalUsed(0), initialSize(size), needToChange(false) {
-    m_array*  = new List<T>[m_size];
+    m_array = new List<T>*[m_size];
     for (int i = 0; i < m_size; ++i) {
         m_array[i] = nullptr;
     }
@@ -54,12 +54,12 @@ dynamicArray<T>::~dynamicArray() {
 }
 
 template<typename T>
-void dynamicArray<T>::add(T toAdd, int index) {
+void dynamicArray<T>::add(T toAdd, int index, int id, UFnode* ptr) {
     if (index >= m_size) return; // Out of bounds
     if (m_array[index] == nullptr) {
         m_array[index] = new List<T>;
     }
-    m_array[index]->insertFront(toAdd);
+    m_array[index]->insertFront(toAdd,id,ptr);
     ++totalUsed;
     needToChange = (totalUsed > m_size / 2); // Example condition
 }
@@ -82,9 +82,9 @@ HashTable<T>::~HashTable() {
 }
 
 template<typename T>
-void HashTable<T>::insert(T data, int id) {
+void HashTable<T>::insert(T data, int id, UFnode* ptr) {
     int index = hash(id); // Assuming T has a getKey() method
-    m_dynamicArray->add(data, index);
+    m_dynamicArray->add(data,index,id);
     if (m_dynamicArray->needToChange) {
         enlargeArray();
     }
@@ -96,12 +96,15 @@ void HashTable<T>::enlargeArray() {
     int newSize = m_tableSize * 2;
     dynamicArray<T>* newArray = new dynamicArray<T>(newSize);
     for (int i = 0; i < m_tableSize; ++i) {
-        List<std::shared_ptr<T>>* list = m_dynamicArray->find(i);
+        List<T>* list = m_dynamicArray->find(i);
         if (list != nullptr) {
             // Assuming List has an iterator or way to traverse elements
-            for (auto& item : *list) {
-                int newIndex = hash(item->getKey()) % newSize;
-                newArray->add(item, newIndex);
+            NodeList<T>* current = list->m_head;
+            while(current) {
+                int newIndex = hash(current->m_key) % newSize;
+                UFnode* ptr = current->ptr;
+                newArray->add(current->m_data, newIndex,current->m_key,ptr);
+                current = current->m_next;
             }
         }
     }
@@ -116,12 +119,12 @@ int HashTable<T>::hash(int index) {
 }
 
 template<typename T>
-T HashTable<T>::find(int id) {
+NodeList<T>* HashTable<T>::find(int id) {
     List<T>* list = m_dynamicArray->find(hash(id));
     NodeList<T>* curr = list->m_head;
     while(curr){
         if(curr->m_key == id){
-            return curr->m_data;
+            return curr;
         }
         curr = curr->m_next;
     }

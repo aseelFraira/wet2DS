@@ -16,4 +16,4 @@ add_executable(wet2DS
         List.h
         Fleet.h
         Fleet.cpp
-        wet2util.h HashTable.h)
+        wet2util.h HashTable.h UFnode.h)

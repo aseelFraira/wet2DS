@@ -16,5 +16,8 @@ public:
     void setShipsNum(int change);
     int getPiratesNum();
     void setPiratesNum(int change);
+    int getID(){
+        return m_fleetID;
+    }
 };
 #endif //WET2DS_FLEET_H
