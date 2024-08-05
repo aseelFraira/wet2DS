@@ -1,7 +1,8 @@
 //
 // Created by Lana on 24/07/2024.
 //
-
+#include "Fleet.h"
+#include <memory>
 #ifndef WET2DS_PIRATE_H
 #define WET2DS_PIRATE_H
 class Pirate{
@@ -12,7 +13,7 @@ private:
     int m_savings;
 
 public:
-
+    std::shared_ptr<Fleet> motherFleet; //TODO UNIONFIND NODEEEEEEEE
     Pirate(): m_argument(0),m_pirateID(0), m_savings(0) {}
     Pirate(int pirateID) : m_pirateID(pirateID), m_argument(0), m_savings(0){}
 

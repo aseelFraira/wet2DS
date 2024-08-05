@@ -18,6 +18,7 @@
 #include "wet2util.h"
 #include "Fleet.h"
 #include "Pirate.h"
+#include <memory>
 
 
 class oceans_t {
