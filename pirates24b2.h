@@ -24,9 +24,8 @@
 class oceans_t {
 private:
 
-    UnionFind m_fleets;
-    HashTable<std::shared_ptr<Pirate>> m_pirates;
-    HashTable<std::shared_ptr<Fleet>> m_AllFleets;
+    UnionFind* m_fleets;
+    HashTable<std::shared_ptr<Pirate>>* m_pirates;
 	//
 	// Here you may add anything you want
 	//

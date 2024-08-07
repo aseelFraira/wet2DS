@@ -7,8 +7,14 @@
 class UnionFind {
 public:
     HashTable<std::shared_ptr<Fleet>>* m_table;
+    HashTable<std::shared_ptr<Fleet>>* m_removed;
 
-    UnionFind(HashTable<std::shared_ptr<Fleet>>* table = nullptr){m_table = table;}
+    UnionFind(){
+        HashTable<std::shared_ptr<Fleet>>* table  = new HashTable<std::shared_ptr<Fleet>>();
+        HashTable<std::shared_ptr<Fleet>>* removed = new HashTable<std::shared_ptr<Fleet>>();
+        m_table = table;
+        m_removed = removed;
+    }
     ~UnionFind() { delete m_table; }
 
      ////functions/////////////////
@@ -49,14 +55,15 @@ public:
                     root1->m_extra -= root2->m_extra;
                     root2->m_fleet->setShipsNum(root1->m_fleet->getShipsNum());
                     root2->m_fleet->setPiratesNum(root1->m_fleet->getPiratesNum());
-                    m_table->remove(id2);
+                    m_removed->insert(root2->m_fleet,id2);
+
 
                 } else {
                     root2->m_parent = root1;
                     root2->m_extra += (root1->m_fleet->getPiratesNum() - root1->m_extra);
                     root1->m_fleet->setShipsNum(root2->m_fleet->getShipsNum());
                     root1->m_fleet->setPiratesNum(root2->m_fleet->getPiratesNum());
-                    m_table->remove(id2);
+                    m_removed->insert(root2->m_fleet,id2);
 
                 }
             } else {
@@ -66,7 +73,7 @@ public:
                     root1->m_extra += (root2->m_fleet->getPiratesNum() - root2->m_extra);
                     root2->m_fleet->setShipsNum(root1->m_fleet->getShipsNum());
                     root2->m_fleet->setPiratesNum(root1->m_fleet->getPiratesNum());
-                    m_table->remove(id1);
+                    m_removed->insert(root1->m_fleet,id1);
 
                 } else {
 
@@ -75,7 +82,7 @@ public:
                     root2->m_extra -= root1->m_extra;
                     root1->m_fleet->setShipsNum(root2->m_fleet->getShipsNum());
                     root1->m_fleet->setPiratesNum(root2->m_fleet->getPiratesNum());
-                    m_table->remove(id1);
+                    m_removed->insert(root1->m_fleet,id1);
 
                 }
             }
